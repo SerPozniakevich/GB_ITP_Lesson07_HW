@@ -18,7 +18,7 @@ double[,] FillArray(int numLine, int numColumns) //Функция заполне
     {
         for (int j = 0; j < matrix.GetLength(1); j++) //Столбец
         {
-            matrix[i, j] = new Random().NextDouble() * 20 - 10;
+            matrix[i, j] = new Random().NextDouble() * 20 - 10; // "20-10" - граница мин/макс 
         }
     }
     return matrix;
@@ -31,7 +31,7 @@ void PrintArray(double[,]matrix)                        //функция печ�
     {
         for (int j = 0; j < matrix.GetLength(1); j++)   //Столбец
         {
-            Console.Write($"{matrix[i, j]:F1}\t");     // "\t" - символ обозначает табуляцию
+            Console.Write($"{matrix[i, j]:F1}\t");     // "\t" - символ обозначает табуляцию, F1 - кол-во знаков после запятой.
         }
         Console.WriteLine();
     }
@@ -39,7 +39,6 @@ void PrintArray(double[,]matrix)                        //функция печ�
 
 int numLine = Prompt("Введите количество строк массива ");
 int numColumns = Prompt("Введите количество столбцов массива ");
-// int maxRand = Prompt("Введите верхнюю границу диапазона "); //необязательно
-// int minRand = Prompt("Введите верхнюю границу диапазона "); //необязательно
+
 double[,] matrix = FillArray(numLine, numColumns); 
 PrintArray(matrix);
